@@ -19,6 +19,7 @@ json_data = {
     'TotalBsmtSF': 672,
 }
 
+# Post request to prediction endpoint.
 response = requests.post('http://localhost:30001/predict', headers=headers, json=json_data)
 if response.status_code == 200:
     print("Successful!")
