@@ -1,9 +1,9 @@
 pipeline {
-    agent any
+    agent any // worker will run step, jenkin will choose any agent availabel, agent can be a node, docker image
 
     options{
-        buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))
-        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5')) // only keep logs within 5 days or runs latest
+        timestamps() // timestamp of each job
     }
 
     environment{

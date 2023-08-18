@@ -4,7 +4,15 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'Testing something..'
+                parallel( 
+                    // run parallel 2 scripts
+                    test1: {
+                        echo 'Testing something 1..'
+                    },
+                    test2: {
+                        echo 'Testing something 2..'
+                    },
+                )
             }
         }
         stage('Build') {
@@ -15,7 +23,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                input "Approve or not?"
                 echo 'Deploying something..'
             }
         }
