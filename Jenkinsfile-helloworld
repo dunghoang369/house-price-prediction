@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                input "Approve or not?"
+                input "Approve or not?" // approve or not
                 echo 'Deploying something..'
             }
         }
